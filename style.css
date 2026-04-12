@@ -20,13 +20,19 @@ header{
 
 .container{
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
     align-items: center;
+    background: #fff6ef;
+    max-width: 500px;
+    padding: 25px;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px #f8cba6;
 }
 
-.container button{
+button{
     background-color: #f2994a;
     color: white;
     border: none;
@@ -35,8 +41,28 @@ header{
     cursor: pointer;
 }
 
-.container button:hover{
+button:hover{
     background-color: #e28535;
     color: #3a3a3a;
 }
 
+#quote {
+    color: #6b4f3a;
+}
+
+#author {
+    color: #6f7f5a;
+}
+
+#saved-quotes {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.saved-quote {
+  background: #fdf1e7;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border-left: 4px solid #f2994a;
+}

@@ -11,7 +11,7 @@ function getQuote() {
 
       document.getElementById("quote").textContent = data.quote;
       document.getElementById("author").textContent = data.author;
-
+      window.currentQuote = data;
     })
     .catch(function(err) {
       document.getElementById("quote").textContent = "Couldn't fetch quote";
@@ -21,3 +21,47 @@ function getQuote() {
 }
 
 document.getElementById("break").onclick = getQuote;
+document.getElementById("save").onclick = function () {
+
+  if (!window.currentQuote) return;
+
+  let saved = JSON.parse(localStorage.getItem("quotes")) || [];
+
+  saved.push(window.currentQuote);
+
+  localStorage.setItem("quotes", JSON.stringify(saved));
+
+  displaySaved();
+
+};
+
+
+function displaySaved() {
+
+  let saved = JSON.parse(localStorage.getItem("quotes")) || [];
+
+  const box = document.getElementById("saved-quotes");
+
+  box.innerHTML = "";
+
+  for (let i = 0; i < saved.length; i++) {
+
+    let item = saved[i];
+
+    let div = document.createElement("div");
+    div.className = "saved-quote";
+
+    div.innerHTML =
+      "<p>" + item.quote + "</p>" +
+      "<small>— " + item.author + "</small>";
+
+    box.appendChild(div);
+  }
+}
+
+
+// here it load when page opens
+window.onload = function () {
+  displaySaved();
+};
+

@@ -66,3 +66,15 @@ button:hover{
   margin-top: 10px;
   border-left: 4px solid #f2994a;
 }
+
+.delete-btn {
+    background-color: #e45858;
+    border: none;
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover{
+    background-color: #d94b4b;
+}

@@ -65,7 +65,6 @@ window.onload = function () {
   displaySaved();
 };
 
-// function to delete quote by index
 function deleteQuote(index) {
 
   let saved = JSON.parse(localStorage.getItem("quotes")) || [];

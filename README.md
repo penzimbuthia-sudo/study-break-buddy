@@ -1,4 +1,4 @@
-# Study Break Buddy ☕️
+# Study Break Buddy
 
 A simple study-break application that helps users take short breaks by displaying motivational quotes.
 
